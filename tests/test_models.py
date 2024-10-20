@@ -138,12 +138,12 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(len(products), 1)
         self.assertEqual(products[0].id, org_id)
         self.assertEqual(products[0].description, "modified")
-    
+
     def test_update_on_invalid_id(self):
         """It should return Data validation error """
         product = ProductFactory()
         product.id = None
-        self.assertRaises(DataValidationError,product.update)
+        self.assertRaises(DataValidationError, product.update)
 
     def test_delete_a_product(self):
         """It should delete a product"""
